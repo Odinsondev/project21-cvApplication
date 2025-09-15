@@ -1,0 +1,18 @@
+.details-card {
+  width: calc(100% - 20px);
+  height: calc((100vh - 40px) / 2);
+
+  border-radius: 5px;
+  margin: 20px;
+
+  background-color: blueviolet;
+
+  overflow: auto;
+}
+
+.txt {
+  margin: 10px;
+  text-align: center;
+
+  overflow: auto;
+}

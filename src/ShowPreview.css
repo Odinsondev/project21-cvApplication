@@ -1,0 +1,25 @@
+.cv-preview {
+  height: calc(100vh - 40px - 40px);
+  width: calc(100% - 40px);
+
+  background-color: gray;
+
+  margin: 20px;
+  border-radius: 5px;
+
+  overflow: auto; /* to fix margin collapse */
+}
+
+.test {
+  margin: 10px;
+  text-align: center;
+
+  overflow: auto; /* to fix margin collapse */
+}
+
+.test2 {
+  margin: 10px;
+  text-align: center;
+
+  overflow: auto; /* to fix margin collapse */
+}
