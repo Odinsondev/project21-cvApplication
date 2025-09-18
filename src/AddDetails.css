@@ -1,11 +1,18 @@
 .details-card {
+  border-radius: 5px;
+  margin: 20px;
+
+  background-color: rgb(144, 63, 220);
+
+  overflow: auto;
+}
+
+.card-body {
   width: calc(100% - 20px);
   height: calc((100vh - 40px) / 2);
 
   border-radius: 5px;
   margin: 20px;
-
-  background-color: blueviolet;
 
   overflow: auto;
 }
@@ -15,4 +22,8 @@
   text-align: center;
 
   overflow: auto;
+}
+
+.hidden {
+  display: none;
 }

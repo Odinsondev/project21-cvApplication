@@ -1,0 +1,8 @@
+.education-card {
+  border-radius: 5px;
+  margin: 20px;
+
+  background-color: rgb(165, 196, 171);
+
+  overflow: auto;
+}
