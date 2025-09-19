@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ShowPreview } from './ShowPreview'
 import AddDetails from './AddDetails'
 import AddEducation from './AddEducation'
+import AddEmployment from './AddEmployment'
 import './App.css'
 
 function App() {
@@ -19,6 +20,14 @@ function App() {
   function activateSecondCard() {
     if (activeCard !== 2) {
       setActiveCard(2);
+    } else {
+      setActiveCard(0);
+    }
+  }
+
+  function activateThirdCard() {
+    if (activeCard !== 3) {
+      setActiveCard(3);
     } else {
       setActiveCard(0);
     }
@@ -67,7 +76,9 @@ function App() {
             makeActive={activateSecondCard} />
         </div>
         <div id='employment'>
-          <p>Employment</p>
+          < AddEmployment
+            card={activeCard}
+            makeActive={activateThirdCard} />
         </div>
       </div>
       <div id='cv'>

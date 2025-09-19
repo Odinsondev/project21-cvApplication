@@ -14,10 +14,6 @@ export default function AddDetails(
         <input type='number' onChange={updatePhone} placeholder='Phone number' />
         <input type='text' onChange={updateAddress} placeholder='Address' />
         <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
       </div>
     </div>
   )
