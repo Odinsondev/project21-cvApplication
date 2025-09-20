@@ -33,6 +33,7 @@ function App() {
     }
   }
 
+  //states for AddDetails
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -57,6 +58,38 @@ function App() {
     const newAddress = e.target.value;
     setAddress(newAddress);
   }
+
+  //states for AddEducation
+  const [school, setSchool] = useState('');
+  const [degree, setDegree] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [location, setLocation] = useState('');
+
+  function changeSchool(e) {
+    const newSchool = e.target.value;
+    setSchool(newSchool);
+  }
+
+  function changeDegree(e) {
+    const newDegree = e.target.value;
+    setDegree(newDegree);
+  }
+
+  function changeStartDate(e) {
+    const newStartDate = e.target.value;
+    setStartDate(newStartDate);
+  }
+
+  function changeEndDate(e) {
+    const newEndDate = e.target.value;
+    setEndDate(newEndDate);
+  }
+
+  function changeLocation(e) {
+    const newLocation = e.target.value;
+    setLocation(newLocation);
+  }
   
   return (
     <div id='parent'>
@@ -73,7 +106,12 @@ function App() {
         <div id='education'>
           <AddEducation
             card={activeCard}
-            makeActive={activateSecondCard} />
+            makeActive={activateSecondCard}
+            updateSchool={changeSchool}
+            updateDegree={changeDegree}
+            updateStartDate={changeStartDate}
+            updateEndDate={changeEndDate}
+            updateLocation={changeLocation} />
         </div>
         <div id='employment'>
           < AddEmployment
@@ -86,7 +124,13 @@ function App() {
           name={name}
           email={email}
           phone={phone}
-          address={address}/>
+          address={address}
+          
+          school={school}
+          degree={degree}
+          startDate={startDate}
+          endDate={endDate}
+          location={location}/>
       </div>
       <div id='footer'>
         <p>Copyright &copy; Odinsondev 2024</p>

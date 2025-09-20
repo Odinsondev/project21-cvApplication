@@ -14,9 +14,11 @@ function ShowPreview(props) {  //used the props keyword for practice
       <br />
       <h3 className='test' >Education</h3>
       <br />
-      <br />
-      <br />
-      <br />
+      <p>{props.school}</p>
+      <p>{props.degree}</p>
+      <p>{props.startDate}</p>
+      <p>{props.endDate}</p>
+      <p>{props.location}</p>
       <br />
       <h3 className='test' >Employment</h3>
     </div>
