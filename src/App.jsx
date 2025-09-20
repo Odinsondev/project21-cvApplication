@@ -34,61 +34,54 @@ function App() {
   }
 
   //states for AddDetails
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
+  const [details, setDetails] = useState({});
 
   function changeName(e) {
-    const newName = e.target.value;
-    setName(newName);
+    const newName = {...details, name: e.target.value };
+    setDetails(newName);
   }
 
   function changeEmail(e) {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
+    const newEmail = {...details, email: e.target.value };
+    setDetails(newEmail);
   }
 
   function changePhone(e) {
-    const newPhone = e.target.value;
-    setPhone(newPhone);
+    const newPhone = {...details, phone: e.target.value };
+    setDetails(newPhone);
   }
 
   function changeAddress(e) {
-    const newAddress = e.target.value;
-    setAddress(newAddress);
+    const newAddress = {...details, address: e.target.value };
+    setDetails(newAddress);
   }
 
   //states for AddEducation
-  const [school, setSchool] = useState('');
-  const [degree, setDegree] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [location, setLocation] = useState('');
+  const [school, setSchool] = useState({});
 
-  function changeSchool(e) {
-    const newSchool = e.target.value;
+  function changeSchoolName(e) {
+    const newSchool = {...school, schoolName: e.target.value};
     setSchool(newSchool);
   }
 
   function changeDegree(e) {
-    const newDegree = e.target.value;
-    setDegree(newDegree);
+    const newSchool = {...school, degree: e.target.value};
+    setSchool(newSchool);
   }
 
   function changeStartDate(e) {
-    const newStartDate = e.target.value;
-    setStartDate(newStartDate);
+    const newSchool = {...school, startDate: e.target.value};
+    setSchool(newSchool);
   }
 
   function changeEndDate(e) {
-    const newEndDate = e.target.value;
-    setEndDate(newEndDate);
+    const newSchool = {...school, endDate: e.target.value};
+    setSchool(newSchool);
   }
 
   function changeLocation(e) {
-    const newLocation = e.target.value;
-    setLocation(newLocation);
+    const newSchool = {...school, location: e.target.value};
+    setSchool(newSchool);
   }
   
   return (
@@ -107,7 +100,7 @@ function App() {
           <AddEducation
             card={activeCard}
             makeActive={activateSecondCard}
-            updateSchool={changeSchool}
+            updateSchool={changeSchoolName}
             updateDegree={changeDegree}
             updateStartDate={changeStartDate}
             updateEndDate={changeEndDate}
@@ -121,16 +114,8 @@ function App() {
       </div>
       <div id='cv'>
         < ShowPreview
-          name={name}
-          email={email}
-          phone={phone}
-          address={address}
-          
-          school={school}
-          degree={degree}
-          startDate={startDate}
-          endDate={endDate}
-          location={location}/>
+          details={details}
+          school={school} />
       </div>
       <div id='footer'>
         <p>Copyright &copy; Odinsondev 2024</p>

@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import './AddEducation.css';
 
-function CreateSchoolList( {list} ) {
+import Something from './Test';
+
+function CreateSchoolList( {list, editSchool} ) {
   return (
     <ul>
       {list.map(function(school) {
-          return <li>{school.name}</li>
+          return <li key={school.id}>
+            <button type='button' onClick={editSchool}>{school.name}</button>  {/* !! */}
+            </li>
       })}
     </ul>
   )
@@ -28,7 +32,7 @@ export default function AddEducation(
   }
 
 
-  const [schoolList, setSchoolList] = useState([{name: 'test'}, {name: 'test2'}])
+  const [schoolList, setSchoolList] = useState([{name: 'test', id: 1}, {name: 'test2', id: 2}])
 
   function addNewSchoolToArray() {
   const newSchool = createNewSchool();
@@ -52,9 +56,33 @@ export default function AddEducation(
     school.startDate = startDate;
     school.endDate = endDate;
     school.location = location;
+    school.id = crypto.randomUUID();
 
     return school;
   }
+
+
+
+
+  const [testList, setTestList] = useState([{name: 'test', id: 1}])
+
+  function addTestToArray() {
+  const newT = addTest();
+  const newTestList = [...testList, newT];
+  setTestList(newTestList);
+  }
+
+
+  function addTest() {
+    const test = Something;
+
+    return test;
+  }
+
+
+
+
+
 
   return (
     <div className='education-card'>
@@ -63,7 +91,7 @@ export default function AddEducation(
       </div>
       <div className={ card === 2 ? 'card-body' : 'hidden' }>
         <br />
-        < CreateSchoolList list={schoolList} />
+        < CreateSchoolList editSchool={toggleAddSchool} list={schoolList} />
         <br />
         <div className={ school === true ? 'school' : 'hidden' }>
           <input id='school-name' type='text' onChange={updateSchool} placeholder='School name'/>
@@ -75,6 +103,8 @@ export default function AddEducation(
         </div>
         <br />
         <button type='button' onClick={toggleAddSchool}>Add</button>
+        <button type='button' onClick={addTestToArray}>Test</button>
+        
       </div>
     </div>
   )
